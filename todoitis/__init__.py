@@ -7,7 +7,7 @@ def create_app(test_config=None):
 
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
-        SECRET_KEY='dev',
+        SECRET_KEY='b\x948\xba\xa9zc\x17wO\xabY\x7f}\xac\x05\x16',
         DATABASE=os.path.join(app.instance_path, 'todoitis.sqlite'),
     )
 
