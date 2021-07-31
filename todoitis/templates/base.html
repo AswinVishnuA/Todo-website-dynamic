@@ -1,21 +1,25 @@
 <!doctype html>
 <title>{% block title %}{% endblock %} - todoitis</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<nav>
-  <h1>todoitis</h1>
-  <ul>
-    {% if g.user %}
-      <li><span>{{ g.user['username'] }}</span>
-      <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
-    {% else %}
-      <li><a href="{{ url_for('auth.register') }}">Register</a>
-      <li><a href="{{ url_for('auth.login') }}">Log In</a>
-    {% endif %}
-  </ul>
-</nav>
+
+<h1>todoitis</h1>
+<div class="logreg">
+<ul>
+  {% if g.user %}
+    <li><span>{{ g.user['username'] }}</span>
+    <li><a href="{{ url_for('auth.logout') }}">LOG OUT</a>
+  {% else %}
+    <li><a href="{{ url_for('auth.register') }}">REGISTER</a>
+    <li><a href="{{ url_for('auth.login') }}">LOG IN</a>
+  {% endif %}
+</ul>
+</div>
+
 <section class="content">
   <header>
+    <div class="taskhead"></div>
     {% block header %}{% endblock %}
+    <div class="taskhead"></div>
   </header>
   {% for message in get_flashed_messages() %}
     <div class="flash">{{ message }}</div>

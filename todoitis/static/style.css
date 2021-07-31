@@ -1,0 +1,150 @@
+*{
+    list-style-type: none;
+    color: white;    
+}
+
+html {
+	
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #141414; 
+    position:relative;
+    
+}
+
+body {
+    background-color: rgb(24, 24, 24);
+  }
+  
+h1 {
+color: lightcoral;
+font-size: 5rem;
+text-align: center;
+}
+
+p {
+font-family: verdana;
+font-size: 20px;
+}
+
+
+.logreg {
+    font-size: 2rem;
+    color: rgb(53, 212, 165);
+    text-decoration: none;
+    text-align: right;
+    margin-top: -12rem;
+    padding: 2rem;
+    
+}
+a {
+    color: rgb(53, 212, 165);
+    text-decoration: none;
+}
+a:hover {
+    color:rgb(53, 162, 212); 
+    text-decoration:none; 
+    cursor:pointer;  
+}
+
+.taskhead{
+    text-align: center;
+    background-color: blue;
+    width: 25%;
+    margin : 0 auto;
+    padding: 10 rem;
+    /* justify-content: center; */
+}
+.taskadd{
+    text-align: center;
+    background-color: rgb(84, 145, 180);
+    width: 20%;
+    margin : 0 auto;
+    justify-content: center;
+    height: 1rem;
+    padding: 100 rem;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    vertical-align: middle;
+}
+
+.task{
+    width:20%;  
+    margin : 0 auto;
+    text-align: center;
+    background-color: rgb(49, 47, 47);
+    box-shadow: grey;
+    box-shadow: 0px 0px 18px 0 #0000002c;
+    padding:2rem;
+    border-radius: 1rem;
+
+}
+
+[type="submit"] {
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    width: 40%;
+    background:#CC6666;
+    border-radius:5px;
+    border:0;
+    cursor:pointer;
+    margin-top:-4px;
+    font-weight:700;
+    display: inline-block;
+    padding: 18px 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(72, 92, 67, 0.788);
+    border: 2px transparent crimson;
+    border-radius:5px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-top: 30px;
+    transition: 0.3s ease;
+    transition-property: background-color, color;
+  }
+  
+  [type="submit"]:hover { background-color: crimson; }
+
+  input[type=text], select, textarea {
+    width: 50%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+    color:black;
+    line-height: 2rem;
+}
+
+  .createtask{
+    width:50%;  
+    color: #141414;
+    margin : 0 auto;
+    text-align: center;
+    background-color: rgb(49, 47, 47);
+    box-shadow: grey;
+    box-shadow: 0px 0px 18px 0 #0000002c;
+    padding:2rem;
+    border-radius: 1rem;
+
+  }
+  .feedback-input {
+	color:rgb(22, 22, 22);
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight:500;
+	font-size: 18px;
+	border-radius: 5px;
+	line-height: 22px;
+	background-color: rgba(255, 255, 255, 0.788);
+	border:2px solid #858585;
+	transition: all 0.3s;
+	padding: 13px;
+	margin-bottom: 15px;
+	width:50%;
+	box-sizing: border-box;
+	outline:0;
+  }
+  
+  .feedback-input:focus { border:2px solid #CC4949; }

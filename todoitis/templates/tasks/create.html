@@ -5,13 +5,13 @@
 {% endblock %}
 
 {% block content %}
-  <form method="post">
-    <label for="taskname">Name of the Task</label>
-    <input name="taskname" id="taskname" value="{{ request.form['taskname'] }}" required>
-    <label for="description">Task Description</label>
-    <textarea name="description" id="description">{{ request.form['description'] }}</textarea>
+  <form class="createtask" method="post">
+    <input name="taskname" type="text" id="taskname" value="{{ request.form['taskname'] }}" required placeholder="Enter task name">
+    <hr>
+    <textarea name="description" type=text id="description" placeholder="Enter task description">{{ request.form['description'] }}</textarea>
+    <hr>
     <label for="duedate">Task Due Date</label>
-    <input name="duedate" id="duedate" type="date" step="1" value="{{ request.form['duedate'] }}" required>
+    <input name="duedate" id="duedate" type="date" step="1" value="{{ request.form['duedate'] }}" required >
     <label for="duetime">Task Due Time</label>
     <input name="duetime" id="duetime" type="time" step="1" value="{{ request.form['duetime'] }}" required>
 

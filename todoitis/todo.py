@@ -17,7 +17,6 @@ def index():
         ' FROM tasks p JOIN user u ON p.author_id = u.id'
         ' ORDER BY due_date,due_time'
     ).fetchall()
-    print("the tasks are ",tasks[0]['due_date'])
     return render_template('tasks/index.html', tasks=tasks)
 
 

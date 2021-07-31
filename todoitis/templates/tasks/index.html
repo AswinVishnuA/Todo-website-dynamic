@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Tasks{% endblock %}</h1>
-  {% if g.user %}
+  {% if g.user%}
+  <div class="taskhead">
+  <h2>{% block title %}Tasks{% endblock %}</h2>
+  </div>
+  <div class="taskadd">
     <a class="action" href="{{ url_for('tasks.create') }}">Add task</a>
+  </div>
   {% endif %}
 {% endblock %}
 
@@ -15,7 +19,7 @@
       <header>
         <div>
           
-          <h1>{{ task['task_name'] }}</h1>
+          <h3>{{ task['task_name'] }}</h3>
           
         </div>
           <a class="action" href="{{ url_for('tasks.update', id=task['id']) }}">Edit</a>
