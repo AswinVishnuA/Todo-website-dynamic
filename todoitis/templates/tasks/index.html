@@ -15,6 +15,7 @@
 {% if g.user %}
   {% for task in tasks %}
   {% if g.user['id'] == task['author_id'] %}
+  
     <article class="task">
       <header>
         <div>
@@ -23,7 +24,7 @@
           
         </div>
           <a class="action" href="{{ url_for('tasks.update', id=task['id']) }}">Edit</a>
-          <form action="{{ url_for('tasks.delete', id=task['id']) }}" method="post">
+          <form class="done" action="{{ url_for('tasks.delete', id=task['id']) }}" method="post">
             <input class="danger" type="submit" value="Done" onclick="return confirm('Are you sure?');">
           </form>
       </header>
