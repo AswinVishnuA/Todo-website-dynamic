@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Edit "{{ task['task_name'] }}"{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="taskname">Taskname</label>
+    <input name="taskname" id="taskname"
+      value="{{ request.form['taskname'] or task['task_name'] }}" required>
+    <label for="description">Description</label>
+    <textarea name="description" id="description">{{ request.form['description'] or task['task_desc'] }}</textarea>
+    <label for="duedate">Task Due Date</label>
+    <input name="duedate" id="duedate" type="date" step="1" value="{{  task[due_date] }}" required>
+    <label for="duetime">Task Due Time</label>
+    <input name="duetime" id="duetime" type="time" step="1" value="{{  task[due_time] }}" required>
+    <input type="submit" value="Save">
+  </form>
+  <hr>
+  <form action="{{ url_for('tasks.delete', id=task['id']) }}" method="post">
+    <input class="danger" type="submit" value="Done" onclick="return confirm('Are you sure?');">
+  </form>
+{% endblock %}

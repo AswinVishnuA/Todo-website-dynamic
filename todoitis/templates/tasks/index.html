@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Tasks{% endblock %}</h1>
+  {% if g.user %}
+    <a class="action" href="{{ url_for('tasks.create') }}">Add task</a>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+{% if g.user %}
+  {% for task in tasks %}
+  {% if g.user['id'] == task['author_id'] %}
+    <article class="task">
+      <header>
+        <div>
+          
+          <h1>{{ task['task_name'] }}</h1>
+          
+        </div>
+          <a class="action" href="{{ url_for('tasks.update', id=task['id']) }}">Edit</a>
+          <form action="{{ url_for('tasks.delete', id=task['id']) }}" method="post">
+            <input class="danger" type="submit" value="Done" onclick="return confirm('Are you sure?');">
+          </form>
+      </header>
+      <p class="body">{{ task['task_desc'] }}</p>
+      
+      <div class="duedate">due on {{ task['due_date'].strftime('%Y-%m-%d') }} at {{ task['due_time']}}</div>
+     
+    </article>
+      <hr>
+    {% endif %}
+  {% endfor %}
+ {% endif %} 
+{% endblock %}
